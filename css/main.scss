@@ -1,0 +1,281 @@
+$blue:        #3eb0ff;
+$blue-light:  #65c0ff;
+$blue-dark:   #258dd5;
+$white:       #ffffff;
+$grey:        #666666;
+$grey-light:  #999999;
+$black:       #222222;
+
+$size-largest:           48px;
+$size-large:             40px;
+$size-medium-large:      32px;
+$size-medium:            20px;
+$size-body-text:         14px;
+$size-body-text-reduced: 12px;
+
+$animation-length: 0.15s;
+
+
+
+html, body {
+  font-family:      "hwt-republic-gothic-solid";
+  background-color: $black;
+}
+
+
+/*
+ * Fixes 3 pixel margin error that happens with images and svgs
+ */
+
+svg {
+  margin-bottom: -3px;
+  margin-right:  -3px;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+
+
+p {
+  font-size:   $size-body-text;
+  line-height: 26px;
+}
+
+
+
+h1 {
+  font-size:      $size-medium;
+  text-transform: uppercase;
+}
+
+
+
+h2 {
+  font-size:      $size-large;
+  margin-bottom:  20px;
+  text-transform: uppercase;
+}
+
+
+
+h3 {
+  font-size:      $size-medium;
+  margin-bottom:  5px;
+  text-transform: uppercase;
+}
+
+
+
+h4 {
+  font-size: $size-body-text;
+}
+
+
+header {
+  color:            $grey;
+  text-transform:   uppercase;
+  font-size:        $size-body-text;
+  padding:          10px;
+  position:         absolute;
+  box-sizing:       border-box;
+  width:            100%;
+
+  nav {
+    a {
+      color:              $grey;
+      margin:             0 5px;
+      -webkit-transition: color $animation-length;
+      -moz-transition:    color $animation-length;
+      -ms-transition:     color $animation-length;
+      -o-transition:      color $animation-length;
+      transition:         color $animation-length;
+
+      &:hover {
+        color:              $grey-light;
+        -webkit-transition: color $animation-length;
+        -moz-transition:    color $animation-length;
+        -ms-transition:     color $animation-length;
+        -o-transition:      color $animation-length;
+        transition:         color $animation-length;
+      }
+    }
+
+    h1 { float:   left;   }
+    ul { float:   right;  }
+    li { display: inline; }
+  }
+}
+
+
+
+footer {
+  text-align:       center;
+  box-sizing:       border-box;
+  padding:          50px 10px;
+  background-color: $black;
+  color:            $white;
+
+  p {
+    max-width:   900px;
+    margin:      5px auto;
+    font-family: arial;
+  }
+}
+
+
+
+.clear-fix {
+  clear: both;
+}
+
+
+
+.button {
+  width:              375px;
+  height:             100px;
+  line-height:        100px;
+  font-size:          $size-largest;
+  text-transform:     uppercase;
+  display:            block;
+  background-color:   $white;
+  -webkit-transition: background-color $animation-length, color $animation-length;
+  -moz-transition:    background-color $animation-length, color $animation-length;
+  -ms-transition:     background-color $animation-length, color $animation-length;
+  -o-transition:      background-color $animation-length, color $animation-length;
+  transition:         background-color $animation-length, color $animation-length;
+
+  &:hover {
+    -webkit-transition: background-color $animation-length, color $animation-length;
+    -moz-transition:    background-color $animation-length, color $animation-length;
+    -ms-transition:     background-color $animation-length, color $animation-length;
+    -o-transition:      background-color $animation-length, color $animation-length;
+    transition:         background-color $animation-length, color $animation-length;
+  }
+}
+
+
+
+.icon {
+  height:            30px;
+  width:             30px;
+  display:           inline-block;
+  background-repeat: no-repeat;
+  background-size:   contain;
+
+  &.-twitter { background-image: url('../assets/twitter-icon.png'); }
+  &.-linkdin { background-image: url('../assets/linkdin-icon.png'); }
+  &.-email   { background-image: url('../assets/email-icon.png');   }
+
+  // Leave text in the dom for screen readers but hide it to normal users
+  span {
+    display: none;
+  }
+}
+
+
+
+.home {
+  background-color: $white;
+}
+
+
+/*
+ * Implementation layer for buttons, content, and svg.
+ * Also, act's like a column.
+ */
+
+.person {
+  width:      50%;
+  float:      left;
+  text-align: center;
+  color:      $white;
+
+  ul {
+    li {
+      display: inline;
+    }
+  }
+
+  .content {
+    background-color: $blue;
+    padding:    0 0 50px 0;
+  }
+
+  .button {
+    color:  $blue;
+    margin: 35px auto 20px auto;
+
+    &:hover {
+      background-color: $blue-light;
+      color: $white;
+    }
+  }
+
+  &:hover {
+    .content {
+      background-color: $blue-dark;
+    }
+
+    path {
+      fill: $blue-dark;
+    }
+  }
+
+}
+
+
+
+@media (max-width: 785px) {
+  h2 {
+    font-size: $size-medium-large;
+  }
+
+  h3, h4 {
+    line-height: $size-body-text-reduced;
+    font-size:   $size-body-text-reduced;
+  }
+
+  .button {
+    font-size:   $size-medium-large;
+    width:       225px;
+    height:      75px;
+    line-height: 75px;
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: $size-body-text;
+  }
+
+  header {
+    display:          block;
+    position:         static;
+    color:            $white;
+    background-color: $black;
+
+    nav a {
+      color: $white;
+    }
+  }
+
+  .home {
+    .person {
+      width:   100%;
+
+      .content {
+        padding: 50px 0 50px 0;
+      }
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}

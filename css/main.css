@@ -6,8 +6,7 @@ html, body {
  * Fixes 3 pixel margin error that happens with images and svgs
  */
 svg {
-  margin-bottom: -3px;
-  margin-right: -3px; }
+  margin-bottom: -3px; }
 
 a {
   text-decoration: none; }

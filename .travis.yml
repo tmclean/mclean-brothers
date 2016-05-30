@@ -4,3 +4,5 @@ deploy:
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
   bucket: $AWS_S3_BUCKET
+  on:
+    branch: travisci

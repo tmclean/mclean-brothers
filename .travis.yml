@@ -5,4 +5,4 @@ deploy:
   secret_access_key: $AWS_SECRET
   bucket: $AWS_S3_BUCKET
   on:
-    branch: travisci
+    branch: master
